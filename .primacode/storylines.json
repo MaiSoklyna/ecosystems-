@@ -789,9 +789,9 @@
       "id": "sl_muknr6o4_l",
       "title": "GitHub still detects a Notion token.",
       "name": "Search And Clean Git History",
-      "status": "running",
+      "status": "done",
       "createdAt": 1790564303236,
-      "updatedAt": 1790564361720,
+      "updatedAt": 1790564496185,
       "fragments": [
         {
           "id": "fr_muknr5dt_19",
@@ -819,6 +819,24 @@
           "confidence": 0.96,
           "needsReview": false,
           "rationale": "directs to execute cleanup steps for finished search clean git history"
+        },
+        {
+          "id": "fr_muknuetx_1c",
+          "raw": "push it now",
+          "at": 1790564453781,
+          "label": "constraint",
+          "confidence": 0.9,
+          "needsReview": false,
+          "rationale": "continues git history cleanup after token issue"
+        },
+        {
+          "id": "fr_muknv7d9_1d",
+          "raw": "create env. file",
+          "at": 1790564490765,
+          "label": "constraint",
+          "confidence": 0.9,
+          "needsReview": false,
+          "rationale": "continues unfinished env file creation"
         }
       ],
       "signals": [
@@ -832,6 +850,234 @@
           "fragmentId": "fr_muknsehx_1b",
           "raw": "Execute the cleanup now.\n\nSearch for:\n- ntn_\n- NOTION_API_KEY\n- Notion API Token\n\nCheck:\n1. Working tree\n2. Staged files\n3. Git commit history\n\nFor each occurrence show:\n- file\n- line number\n- commit hash (if from history)\n\nThen:\n\n1. Remove or redact every exposed token.\n2. Replace tokens with:\n   \"***REDACTED***\"\n\n3. Verify again that:\n   - no ntn_ values remain\n   - no Notion tokens remain\n\n4. Show all modified files.\n\n5. Show the exact git commands I need to run next.\n\nDo not push.\nDo not stop at planning.\nActually perform the cleanup.",
           "at": 1790564360037,
+          "delivery": "restart"
+        },
+        {
+          "fragmentId": "fr_muknuetx_1c",
+          "raw": "push it now",
+          "at": 1790564453781,
+          "delivery": "restart"
+        },
+        {
+          "fragmentId": "fr_muknv7d9_1d",
+          "raw": "create env. file",
+          "at": 1790564490765,
+          "delivery": "restart"
+        }
+      ],
+      "sessionID": "ses_f1a15b7adffeIlQ6yVXlmys220"
+    },
+    {
+      "id": "sl_muko4m42_m",
+      "title": "Test the Notion integration.",
+      "name": "Notion Integration Test",
+      "status": "done",
+      "createdAt": 1790564929778,
+      "updatedAt": 1790565228786,
+      "fragments": [
+        {
+          "id": "fr_muko4krb_1e",
+          "raw": "Test the Notion integration.\n\nCreate a new Notion page with:\n\nTitle: OPP Course\nContent:\n- Created by Primacode\n- Notion Integration Test\n- Date: 2026-09-28\n\nRequirements:\n1. Use the configured NOTION_API_KEY\n2. Show the exact database or parent page used\n3. Show the API request made\n4. Show the resulting page ID\n5. Show the resulting page URL\n6. If creation fails, show the exact error message and stack trace\n7. Do not simulate results. Use the real Notion API.\n\nAfter creation, read the page back and verify it exists.",
+          "at": 1790564928023,
+          "label": "new_task",
+          "confidence": 0.96,
+          "needsReview": false,
+          "rationale": "asks for new integration test work"
+        },
+        {
+          "id": "fr_muko9kku_1f",
+          "raw": "https://app.notion.com/p/eco-3e9e33685dc4809ab0d9cb5385a697db?v=06ee33685dc4837690ee0873d03cdfa8&source=copy_link",
+          "at": 1790565161070,
+          "label": "constraint",
+          "confidence": 0.9,
+          "needsReview": false,
+          "rationale": "URL continues Notion integration test"
+        },
+        {
+          "id": "fr_mukoaq4y_1g",
+          "raw": "ready",
+          "at": 1790565214931,
+          "label": "constraint",
+          "confidence": 0.9,
+          "needsReview": false,
+          "rationale": "asks to continue finished Notion integration test"
+        }
+      ],
+      "signals": [
+        {
+          "fragmentId": "fr_muko9kku_1f",
+          "raw": "https://app.notion.com/p/eco-3e9e33685dc4809ab0d9cb5385a697db?v=06ee33685dc4837690ee0873d03cdfa8&source=copy_link",
+          "at": 1790565161070,
+          "delivery": "restart"
+        },
+        {
+          "fragmentId": "fr_mukoaq4y_1g",
+          "raw": "ready",
+          "at": 1790565214931,
+          "delivery": "restart"
+        }
+      ],
+      "sessionID": "ses_f1a15b7adffeIlQ6yVXlmys220"
+    },
+    {
+      "id": "sl_mukobrny_n",
+      "title": "Update OPP Course page and add:",
+      "name": "Update OPP Course Page",
+      "status": "done",
+      "createdAt": 1790565263566,
+      "updatedAt": 1790567675053,
+      "fragments": [
+        {
+          "id": "fr_mukobqhr_1h",
+          "raw": "Update OPP Course page and add:\n- Trainer: Mai Soklyna\n- Status: Draft",
+          "at": 1790565262047,
+          "label": "new_task",
+          "confidence": 0.96,
+          "needsReview": false,
+          "rationale": "asks to update OPP Course page, unrelated to Notion test"
+        },
+        {
+          "id": "fr_mukoiu8b_1i",
+          "raw": "List all available Notion databases.\n\nFor each database show:\n- Name\n- ID\n- Properties\n- Write Access (Yes/No)\n\nThen recommend which database I should use for OPP Course records.",
+          "at": 1790565593483,
+          "label": "constraint",
+          "confidence": 0.9,
+          "needsReview": false,
+          "rationale": "continues OPP Course page update with database recommendation"
+        },
+        {
+          "id": "fr_mukomp76_1j",
+          "raw": "Create a new Notion database automatically.\n\nRequirements:\n\nDatabase Name: OPP Courses\n\nProperties:\n- Name (title)\n- Trainer (select)\n- Status (select)\n  - Draft\n  - Active\n  - Completed\n- Date (date)\n- Notes (rich_text)\n\nUse the existing Untitled page:\n3e9e3368-5dc4-809a-b0d9-cb5385a697db\n\nAfter creation:\n1. Show database ID\n2. Show database URL\n3. Show properties created\n4. Create the first record:\n\nName: Stress Management Workshop\nTrainer: Mai Soklyna\nStatus: Draft\nDate: 2026-09-28\nNotes: First course created through Primacode\n\nIf database creation is not possible,\nshow the exact Notion API error and explain why.\nDo not simulate results.\nUse the real Notion API.",
+          "at": 1790565773586,
+          "label": "constraint",
+          "confidence": 0.3,
+          "needsReview": true,
+          "rationale": "not classified (classifier error); nothing in flight, continuing the thread that finished last: \"Update OPP Course Page\""
+        },
+        {
+          "id": "fr_mukov8ww_1k",
+          "raw": "ok now let write all information into strees management page detail more",
+          "at": 1790566172384,
+          "label": "constraint",
+          "confidence": 0.92,
+          "needsReview": false,
+          "rationale": "continues update of OPP Course page with more details"
+        },
+        {
+          "id": "fr_mukpp7f1_1l",
+          "raw": "do you thing whice part to add more",
+          "at": 1790567570125,
+          "label": "constraint",
+          "confidence": 0.78,
+          "needsReview": false,
+          "rationale": "asks which part to add more to current page"
+        },
+        {
+          "id": "fr_mukpqg9g_1n",
+          "raw": "Add at least Pricing, Location, Prerequisites, and What to Bring. These are the most commonly asked questions. all of them",
+          "at": 1790567628244,
+          "label": "constraint",
+          "confidence": 0.96,
+          "needsReview": false,
+          "rationale": "Add required sections to completed OPP Course page"
+        }
+      ],
+      "signals": [
+        {
+          "fragmentId": "fr_mukoiu8b_1i",
+          "raw": "List all available Notion databases.\n\nFor each database show:\n- Name\n- ID\n- Properties\n- Write Access (Yes/No)\n\nThen recommend which database I should use for OPP Course records.",
+          "at": 1790565593483,
+          "delivery": "restart"
+        },
+        {
+          "fragmentId": "fr_mukomp76_1j",
+          "raw": "Create a new Notion database automatically.\n\nRequirements:\n\nDatabase Name: OPP Courses\n\nProperties:\n- Name (title)\n- Trainer (select)\n- Status (select)\n  - Draft\n  - Active\n  - Completed\n- Date (date)\n- Notes (rich_text)\n\nUse the existing Untitled page:\n3e9e3368-5dc4-809a-b0d9-cb5385a697db\n\nAfter creation:\n1. Show database ID\n2. Show database URL\n3. Show properties created\n4. Create the first record:\n\nName: Stress Management Workshop\nTrainer: Mai Soklyna\nStatus: Draft\nDate: 2026-09-28\nNotes: First course created through Primacode\n\nIf database creation is not possible,\nshow the exact Notion API error and explain why.\nDo not simulate results.\nUse the real Notion API.",
+          "at": 1790565773586,
+          "delivery": "restart"
+        },
+        {
+          "fragmentId": "fr_mukov8ww_1k",
+          "raw": "ok now let write all information into strees management page detail more",
+          "at": 1790566172384,
+          "delivery": "restart"
+        },
+        {
+          "fragmentId": "fr_mukpp7f1_1l",
+          "raw": "do you thing whice part to add more",
+          "at": 1790567570125,
+          "delivery": "restart"
+        },
+        {
+          "fragmentId": "fr_mukpqg9g_1n",
+          "raw": "Add at least Pricing, Location, Prerequisites, and What to Bring. These are the most commonly asked questions. all of them",
+          "at": 1790567628244,
+          "delivery": "restart"
+        }
+      ],
+      "sessionID": "ses_f1a15b7adffeIlQ6yVXlmys220"
+    },
+    {
+      "id": "sl_mukpub9h_o",
+      "title": "create new page for Q&A form for ask question about Strees management",
+      "name": "Stress Management Q&A Page",
+      "status": "running",
+      "createdAt": 1790567808389,
+      "updatedAt": 1790569169284,
+      "fragments": [
+        {
+          "id": "fr_mukpu8zm_1o",
+          "raw": "create new page for Q&A form for ask question about Strees management",
+          "at": 1790567805442,
+          "label": "new_task",
+          "confidence": 0.92,
+          "needsReview": false,
+          "rationale": "asks for new Q&A page unrelated to current work"
+        },
+        {
+          "id": "fr_mukpx0dv_1p",
+          "raw": "one more page is prepare question and answer for use on presentatoin day and want more i want tou create slide powerpoint in my folder about the topic i talk now",
+          "at": 1790567934259,
+          "label": "constraint",
+          "confidence": 0.3,
+          "needsReview": true,
+          "rationale": "not classified (classifier timed out); nothing in flight, continuing the thread that finished last: \"Stress Management Q&A Page\""
+        },
+        {
+          "id": "fr_mukqf0fo_1q",
+          "raw": "yes page write question and  answer into page",
+          "at": 1790568774132,
+          "label": "constraint",
+          "confidence": 0.9,
+          "needsReview": false,
+          "rationale": "refers to completing Q&A page"
+        },
+        {
+          "id": "fr_mukqn5qy_1r",
+          "raw": "ok let push everything to git",
+          "at": 1790569154266,
+          "label": "constraint",
+          "confidence": 0.3,
+          "needsReview": true,
+          "rationale": "not classified (classifier timed out); nothing in flight, continuing the thread that finished last: \"Stress Management Q&A Page\""
+        }
+      ],
+      "signals": [
+        {
+          "fragmentId": "fr_mukpx0dv_1p",
+          "raw": "one more page is prepare question and answer for use on presentatoin day and want more i want tou create slide powerpoint in my folder about the topic i talk now",
+          "at": 1790567934259,
+          "delivery": "restart"
+        },
+        {
+          "fragmentId": "fr_mukqf0fo_1q",
+          "raw": "yes page write question and  answer into page",
+          "at": 1790568774132,
+          "delivery": "restart"
+        },
+        {
+          "fragmentId": "fr_mukqn5qy_1r",
+          "raw": "ok let push everything to git",
+          "at": 1790569154266,
           "delivery": "restart"
         }
       ],
