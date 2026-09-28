@@ -1,0 +1,6 @@
+.env
+.env.local
+.env.*
+*.pem
+node_modules/
+NOTION_API_KEY
